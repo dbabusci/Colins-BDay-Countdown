@@ -37,6 +37,6 @@
   }
 }
 
-.containerWrapper{
-  height: 100vh;
+.headerFontSize{
+  font-size: 5vw;
 }
