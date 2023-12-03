@@ -8,14 +8,14 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   return (
-    <Conatiner className='vw-100 vh-100 flex-fill bg-primary' fluid>
-      <Row className='p-5'>
+    <Conatiner className='vw-100 vh-100 flex-fill bg-success bg-gradient' fluid>
+      <Row className=' h-25 w-100'>
         <Col>
           <Header/>
         </Col>
       </Row>
-      <Row>
-        <Col>
+      <Row className='w-100 h-50'>
+        <Col className='w-100 h-100'>
           <Countdown/>
         </Col>
       </Row>

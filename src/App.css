@@ -40,3 +40,11 @@
 .headerFontSize{
   font-size: 5vw;
 }
+
+.labelFontSize{
+  font-size: 4vw;
+}
+
+.countCarry{
+  width: 120px;
+}
