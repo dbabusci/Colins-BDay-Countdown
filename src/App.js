@@ -3,13 +3,14 @@ import Row from 'react-bootstrap/Row';
 import Col from'react-bootstrap/Col';
 import Countdown from './Components/countdown';
 import Header from './Components/header';
+import ImageButton from './Components/imageButton';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   return (
     <Conatiner className='vw-100 vh-100 flex-fill bg-success bg-gradient' fluid>
-      <Row className=' h-25 w-100'>
+      <Row className=' h-25 w-100 pt-5'>
         <Col>
           <Header/>
         </Col>

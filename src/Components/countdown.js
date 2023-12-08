@@ -10,7 +10,6 @@ const CountdownTimer = () => {
     const [minutes, setMinutes] = useState(0);
     const [seconds, setSeconds] = useState(0);
     const theDay = "Nov 2 2024";
-    //const [currentDay, setCurrentDay] = useState(theDay);
 
     useEffect(() =>{
         const change = new Date(theDay);
