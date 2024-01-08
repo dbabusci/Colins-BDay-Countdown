@@ -12,15 +12,24 @@ const CountdownTimer = () => {
     const theDay = "Nov 2 2024";
 
     useEffect(() =>{
-        const change = new Date(theDay);
+        let change = new Date(theDay);
+        let currentDay = new Date();
+        let totalSeconds = (change - currentDay) / 1000;
+        let hoursRemain = totalSeconds % 86400;
+        setDays(Math.floor(totalSeconds / 86400));
+        let minutesRemain = hoursRemain % 3600;
+        setHours(Math.floor(hoursRemain / 3600));
+        let secondsRemain = minutesRemain % 60;
+        setMinutes(Math.floor(minutesRemain / 60));
+        setSeconds(Math.floor(secondsRemain));
         const interval = setInterval(() =>{
-            const currentDay = new Date();
-            const totalSeconds = (change - currentDay) / 1000;
-            const hoursRemain = totalSeconds % 86400;
+            currentDay = new Date();
+            totalSeconds = (change - currentDay) / 1000;
+            hoursRemain = totalSeconds % 86400;
             setDays(Math.floor(totalSeconds / 86400));
-            const minutesRemain = hoursRemain % 3600;
+            minutesRemain = hoursRemain % 3600;
             setHours(Math.floor(hoursRemain / 3600));
-            const secondsRemain = minutesRemain % 60;
+            secondsRemain = minutesRemain % 60;
             setMinutes(Math.floor(minutesRemain / 60));
             setSeconds(Math.floor(secondsRemain));
         },1000)
