@@ -9,27 +9,36 @@ const CountdownTimer = () => {
     const [hours, setHours] = useState(0);
     const [minutes, setMinutes] = useState(0);
     const [seconds, setSeconds] = useState(0);
-    const theDay = "Nov 2 2024";
+    const [birthday, setBirthday] = useState(new Date("Nov 2 1985"));
+    
+    useEffect(()=>{
+        const now = new Date();
+        if(birthday < now){
+            const next = new Date(birthday);
+            next.setFullYear(next.getFullYear() + 1);
+            setBirthday(next);
+        }
+    })
 
     useEffect(() =>{
-        let change = new Date(theDay);
+        let change = new Date(birthday);
         let currentDay = new Date();
         let totalSeconds = (change - currentDay) / 1000;
         let hoursRemain = totalSeconds % 86400;
-        setDays(Math.floor(totalSeconds / 86400));
         let minutesRemain = hoursRemain % 3600;
-        setHours(Math.floor(hoursRemain / 3600));
         let secondsRemain = minutesRemain % 60;
+        setDays(Math.floor(totalSeconds / 86400));
+        setHours(Math.floor(totalSeconds / 2030400)); //gets different answer with hoursRemain
         setMinutes(Math.floor(minutesRemain / 60));
         setSeconds(Math.floor(secondsRemain));
         const interval = setInterval(() =>{
             currentDay = new Date();
             totalSeconds = (change - currentDay) / 1000;
             hoursRemain = totalSeconds % 86400;
-            setDays(Math.floor(totalSeconds / 86400));
             minutesRemain = hoursRemain % 3600;
-            setHours(Math.floor(hoursRemain / 3600));
             secondsRemain = minutesRemain % 60;
+            setDays(Math.floor(totalSeconds / 86400));
+            setHours(Math.floor(totalSeconds / 2030400));
             setMinutes(Math.floor(minutesRemain / 60));
             setSeconds(Math.floor(secondsRemain));
         },1000)
