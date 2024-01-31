@@ -24,23 +24,17 @@ const CountdownTimer = () => {
         let change = new Date(birthday);
         let currentDay = new Date();
         let totalSeconds = (change - currentDay) / 1000;
-        let hoursRemain = totalSeconds % 86400;
-        let minutesRemain = hoursRemain % 3600;
-        let secondsRemain = minutesRemain % 60;
         setDays(Math.floor(totalSeconds / 86400));
         setHours(Math.floor(totalSeconds / 2030400)); //gets different answer with hoursRemain
-        setMinutes(Math.floor(minutesRemain / 60));
-        setSeconds(Math.floor(secondsRemain));
+        setMinutes(Math.floor((totalSeconds % 3600) / 60));
+        setSeconds(Math.floor(totalSeconds % 60));
         const interval = setInterval(() =>{
             currentDay = new Date();
             totalSeconds = (change - currentDay) / 1000;
-            hoursRemain = totalSeconds % 86400;
-            minutesRemain = hoursRemain % 3600;
-            secondsRemain = minutesRemain % 60;
             setDays(Math.floor(totalSeconds / 86400));
             setHours(Math.floor(totalSeconds / 2030400));
-            setMinutes(Math.floor(minutesRemain / 60));
-            setSeconds(Math.floor(secondsRemain));
+            setMinutes(Math.floor((totalSeconds % 3600) / 60));
+            setSeconds(Math.floor(totalSeconds % 60));
         },1000)
     })
 
