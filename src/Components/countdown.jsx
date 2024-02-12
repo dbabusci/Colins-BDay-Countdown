@@ -28,7 +28,7 @@ const CountdownTimer = () => {
         let minutesRemain = hoursRemain % 3600;
         let secondsRemain = minutesRemain % 60;
         setDays(Math.floor(totalSeconds / 86400));
-        setHours(Math.floor(totalSeconds / 2030400)); //gets different answer with hoursRemain
+        setHours(Math.floor(hoursRemain / 3600));
         setMinutes(Math.floor(minutesRemain / 60));
         setSeconds(Math.floor(secondsRemain));
         const interval = setInterval(() =>{
@@ -38,7 +38,7 @@ const CountdownTimer = () => {
             minutesRemain = hoursRemain % 3600;
             secondsRemain = minutesRemain % 60;
             setDays(Math.floor(totalSeconds / 86400));
-            setHours(Math.floor(totalSeconds / 2030400));
+            setHours(Math.floor(hoursRemain / 3600));
             setMinutes(Math.floor(minutesRemain / 60));
             setSeconds(Math.floor(secondsRemain));
         },1000)
