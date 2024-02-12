@@ -25,28 +25,16 @@ const CountdownTimer = () => {
         let currentDay = new Date();
         let totalSeconds = (change - currentDay) / 1000;
         setDays(Math.floor(totalSeconds / 86400));
-<<<<<<< HEAD:src/Components/countdown.jsx
-        setHours(Math.floor(hoursRemain / 3600));
-        setMinutes(Math.floor(minutesRemain / 60));
-        setSeconds(Math.floor(secondsRemain));
-=======
         setHours(Math.floor(totalSeconds / 2030400)); //gets different answer with hoursRemain
         setMinutes(Math.floor((totalSeconds % 3600) / 60));
         setSeconds(Math.floor(totalSeconds % 60));
->>>>>>> 9062b8077ca72af12eb4721789119f1a5fa1ad56:src/Components/countdown.js
         const interval = setInterval(() =>{
             currentDay = new Date();
             totalSeconds = (change - currentDay) / 1000;
             setDays(Math.floor(totalSeconds / 86400));
-<<<<<<< HEAD:src/Components/countdown.jsx
-            setHours(Math.floor(hoursRemain / 3600));
-            setMinutes(Math.floor(minutesRemain / 60));
-            setSeconds(Math.floor(secondsRemain));
-=======
             setHours(Math.floor(totalSeconds / 2030400));
             setMinutes(Math.floor((totalSeconds % 3600) / 60));
             setSeconds(Math.floor(totalSeconds % 60));
->>>>>>> 9062b8077ca72af12eb4721789119f1a5fa1ad56:src/Components/countdown.js
         },1000)
     })
 
