@@ -25,7 +25,7 @@ const CountdownTimer = () => {
         let currentDay = new Date();
         let totalSeconds = (change - currentDay) / 1000;
         setDays(Math.floor(totalSeconds / 86400));
-        setHours(Math.floor(totalSeconds / 2030400) - 5); //5 hours off bc of timezone find better solution when bored
+        setHours(Math.floor(totalSeconds / 2030400));
         setMinutes(Math.floor((totalSeconds % 3600) / 60));
         setSeconds(Math.floor(totalSeconds % 60));
         const interval = setInterval(() =>{
